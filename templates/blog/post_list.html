@@ -9,16 +9,12 @@
     <h1><a href="/">Django Soratik Blog</a></h1>
 </div>
 
-<div>
-    <p>published: 17.39.2020, 12:14</p>
-    <h2><a href="">My first post</a></h2>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, aliquam amet corporis inventore maiores quaerat rem? Dolorum fugit harum hic ipsa libero minima minus nesciunt, nostrum tempora velit. Aliquid, itaque.</p>
-</div>
-
-<div>
-    <p>published: 17.39.2020, 12:14</p>
-    <h2><a href="">My second post</a></h2>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione repellendus sapiente tenetur veniam? A animi dolore ducimus error explicabo maxime officiis perferendis, quas rem, reprehenderit, repudiandae sit tenetur totam veritatis?</p>
-</div>
+{% for post in posts %}
+    <div>
+        <p>published: {{ post.published_date }}</p>
+        <h1><a href="">{{ post.title }}</a></h1>
+        <p>{{ post.text|linebreaksbr }}</p>
+    </div>
+{% endfor %}
 </body>
 </html>
