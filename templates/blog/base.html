@@ -7,11 +7,14 @@
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
     <style>
         body {
-            padding-left: 10px;
+
+            background-color: #ffd0e8;
+
+
         }
 
         .page-header {
-            background-color: #ff9400;
+            background-color: blueviolet;
             margin-top: 0;
             padding: 20px 20px 20px 40px;
         }
@@ -20,15 +23,39 @@
             color: #ffffff;
             font-size: 36pt;
             text-decoration: none;
+            text-align: center;
+
+        }
+
+
+        .textwrap {
+            word-wrap: break-word;
+        }
+
+        .block {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            padding-right: 25%;
+            padding-left: 25%;
+
         }
 
         .content {
             margin-left: 40px;
+
         }
 
         h1, h2, h3, h4 {
-            font-family: 'Lobster', cursive;
+            font-family: 'Comic Sans MS', cursive;
+
         }
+         hr {
+    border: none; /* Убираем границу для браузера Firefox */
+    color: black; /* Цвет линии для остальных браузеров */
+    background-color: black; /* Цвет линии для браузера Firefox и Opera */
+    height: 2px; /* Толщина линии */
+   }
 
         .date {
             color: #828282;
@@ -40,6 +67,8 @@
 
         .post-form textarea, .post-form input {
             width: 100%;
+
+
         }
 
         .top-menu, .top-menu:hover, .top-menu:visited {
@@ -47,10 +76,13 @@
             float: right;
             font-size: 26pt;
             margin-right: 20px;
+
         }
 
         .post {
             margin-bottom: 70px;
+
+
         }
 
         .post h1 a, .post h1 a:visited {
@@ -60,18 +92,21 @@
 </head>
 <body>
 <body>
-    <div class="page-header">
-            <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
-            <h1><a href="/">Django Soratik Blog</a></h1>
-        </div>
-        <div class="content container">
-            <div class="row">
-                <div class="col-md-8">
-                    {% block content %}
-                    {% endblock %}
-                </div>
+<div class="page-header">
+    <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+    <h1><a href="/">Django Soratik Blog</a></h1>
+</div>
+<div class="block">
+    <div class="content container">
+
+        <div class="row">
+            <div class="col-md-8">
+                {% block content %}
+                {% endblock %}
             </div>
         </div>
+    </div>
+</div>
 </body>
 </body>
 </html>
